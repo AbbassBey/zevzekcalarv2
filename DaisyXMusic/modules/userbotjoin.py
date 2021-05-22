@@ -31,27 +31,26 @@ async def addchannel(client, message):
         invitelink = await client.export_chat_invite_link(chid)
     except:
         await message.reply_text(
-            "<b>Add me as admin of yor group first</b>",
+            "<b>Önce beni grubunuzun yöneticisi olarak ekleyin</b>",
         )
         return
 
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "DaisyMusic"
+        user.first_name = "ZevzekCalar"
 
     try:
         await USER.join_chat(invitelink)
-        await USER.send_message(message.chat.id, "I joined here as you requested")
+        await USER.send_message(message.chat.id, "İstediğiniz gibi buraya katıldım")
     except UserAlreadyParticipant:
         await message.reply_text(
-            "<b>helper already in your chat</b>",
+            "<b>Zaten burdayım</b>",
         )
     except Exception as e:
         print(e)
         await message.reply_text(
-            f"<b>🛑 Flood Wait Error 🛑 \n User {user.first_name} couldn't join your group due to heavy join requests for userbot! Make sure user is not banned in group."
-            "\n\nOr manually add @DaisyXhelper to your Group and try again</b>",
+            f"<b>🛑 Sel Bekleme Hatası 🛑{user.first_name} kullanıcısı, userbot'un yoğun katılım istekleri nedeniyle grubunuza katılamadı! Kullanıcının grupta yasaklanmadığından emin olun. " "\ n \ nYa da @zevzekcalarasistan'ı Grubunuza manuel olarak ekleyin ve tekrar deneyin </b>"</b>",
         )
         return
     await message.reply_text(
