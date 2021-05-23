@@ -17,85 +17,86 @@
 import os
 from DaisyXMusic.config import SOURCE_CODE,ASSISTANT_NAME,PROJECT_NAME,SUPPORT_GROUP,UPDATES_CHANNEL
 class Messages():
-      START_MSG = "**Hello 👋 [{}](tg://user?id={})!**\n\n🤖 I am an advanced bot created for playing music in the voice chats of Telegram Groups & Channels.\n\n✅ Send me /help for more info."
+      START_MSG = "**Hello 👋 [{}](tg://user?id={})!**\n\n🤖 Telegram Grupları ve Kanallarının sesli sohbetlerinde müzik çalmak için oluşturulmuş gelişmiş bir botum.\n\n✅ Yardım /help diyebilirsin."
       HELP_MSG = [
         ".",
 f"""
-**Hey 👋 Welcome back to {PROJECT_NAME}
+**Tekrardan hoşgeldin :D {PROJECT_NAME}
 
-⚪️ {PROJECT_NAME} can play music in your group's voice chat as well as channel voice chats
+⚪️ {PROJECT_NAME} grubunuzun sesli sohbetinde ve kanal sesli sohbetlerinde müzik çalabilirim.
 
-⚪️ Assistant name >> @{ASSISTANT_NAME}\n\nClick next for instructions**
+⚪️ Asistanımın adı >> @{ASSISTANT_NAME}\n\nTalimatlar için ileriye tıklayın**
 """,
 
 f"""
-**Setting up**
+**Kurulum**
 
-1) Make bot admin (Group and in channel if use cplay)
-2) Start a voice chat
-3) Try /play [song name] for the first time by an admin
-*) If userbot joined enjoy music, If not add @{ASSISTANT_NAME} to your group and retry
+1) Bot yöneticisi yap (Grup ve cplay kullanıyorsanız kanalda)
+2) Sesli sohbet başlatın
+3) Bir yönetici tarafından ilk kez /play [şarkı adını] deneyin.
+*) Userbot müziğin keyfini çıkardıysa, grubunuza @{ASSISTANT_NAME} eklemeyin ve yeniden deneyin
 
-**For Channel Music Play**
+**Kanal Müzik Çalma için**
 1) Make me admin of your channel 
 2) Send /userbotjoinchannel in linked group
 3) Now send commands in linked group
 
-**Commands**
+**Komutlar**
 
-**=>> Song Playing 🎧**
+**=>> Şarkı Çalma 🎧**
 
-- /play: Play song using youtube music
-- /play [yt url] : Play the given yt url
-- /play [reply yo audio]: Play replied audio
-- /dplay: Play song via deezer
-- /splay: Play song via jio saavn
+- /play: YouTube müziğini kullanarak şarkı çalın
+- /play [yt url] : Verilen yt url'sini oynat
+- /play [reply yo audio]: Yanıtlanan sesi çal
+- /dplay: Deezer ile şarkı çal
+- /splay: Jio saavn ile şarkı çal
 
-**=>> Playback ⏯**
+**=>> Çalma komutları ⏯**
 
-- /player: Open Settings menu of player
-- /skip: Skips the current track
-- /pause: Pause track
-- /resume: Resumes the paused track
-- /end: Stops media playback
-- /current: Shows the current Playing track
-- /playlist: Shows playlist
+- /player:  Ayarlar menüsünü açar.
+- /skip: Bir sonraki şarkıya geçer.
+- /pause: Şarkıyı durdurur.
+- /resume: Durdurulan şarkıyı devam ettirir.
+- /end: Müzik botunu kapatır
+- /current: Geçerli şarkıyı gösterir
+- /playlist: playlist gösterir.
 """,
         
 f"""
-**=>> Channel Music Play 🛠**
+**=>> Kanalda müzik çalma komutları 🛠**
 
-⚪️ For linked group admins only:
+⚪️ Yalnızca bağlantılı grup yöneticileri için:
 
-- /cplay [song name] - play song you requested
-- /cdplay [song name] - play song you requested via deezer
-- /csplay [song name] - play song you requested via jio saavn
-- /cplaylist - Show now playing list
-- /cccurrent - Show now playing
-- /cplayer - open music player settings panel
-- /cpause - pause song play
-- /cresume - resume song play
-- /cskip - play next song
-- /cend - stop music play
-- /userbotjoinchannel - invite assistant to your chat
+- /cplay [song name] - istediğin şarkıyı çal
+- /cdplay [song name] - deezer ile istediğin şarkıyı çal
+- /csplay [song name] - jio saavn ile istediğin şarkıyı çal
+- /cplaylist - Şimdi çalma listesini göster
+- /cccurrent - Şimdi çalan göster
+- /cplayer - müzik çalar ayarları panelini aç
+- /cpause - şarkı çalmayı duraklat
+- /cresume - şarkı çalmaya devam et
+- /cskip - sonraki şarkıyı çal
+- /cend - müzik çalmayı durdur
+- /userbotjoinchannel - asistanı sohbetinize davet edin
 
-channel is also can be used instead of c ( /cplay = /channelplay )
+c yerine kanal da kullanılabilir ( /cplay = /channelplay )
 
-⚪️ If you donlt like to play in linked group:
+⚪️ Bağlı grupta oynamayı sevmiyorsanız:
 
-1) Get your channel ID.
-2) Create a group with tittle: Channel Music: your_channel_id
-3) Add bot as Channel admin with full perms
-4) Add @{ASSISTANT_NAME} to the channel as an admin.
-5) Simply send commands in your group.
+1) Kanal kimliğinizi alın.
+2) Başlığa sahip bir grup oluşturun: Channel Music: your_channel_id
+3) Tam izinlere sahip kanal yöneticisi olarak bot ekleyin
+4) @{ASSISTANT_NAME} öğesini kanala yönetici olarak ekleyin.
+5) Grubunuza komutlar göndermeniz yeterlidir.
+
 """,
 
 f"""
-**=>> More tools 🧑‍🔧**
+**=>> Ek aralar 🧑‍🔧**
 
-- /admincache: Updates admin info of your group. Try if bot isn't recognize admin
-- /userbotjoin: Invite @{ASSISTANT_NAME} Userbot to your chat
+- /admincache: Grubunuzun yönetici bilgilerini günceller. Bot yöneticiyi tanımıyorsa deneyin
+- /userbotjoin: @{ASSISTANT_NAME} Userbot'u sohbetinize davet edin
 
-*Player cmd and all other cmds except /play, /current  and /playlist  are only for admins of the group.
+*Player cmd ve /play, /current ve /playlist dışındaki diğer tüm cmd'ler yalnızca grubun yöneticileri içindir.
 """
       ]
